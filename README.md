@@ -1,13 +1,12 @@
-# slideframework
-
-[![Version](http://cocoapod-badges.herokuapp.com/v/slideframework/badge.png)](http://cocoadocs.org/docsets/slideframework)
-[![Platform](http://cocoapod-badges.herokuapp.com/p/slideframework/badge.png)](http://cocoadocs.org/docsets/slideframework)
+# SlideViewFramework
 
 ## Usage
 
 To run the example project; clone the repo, and run `pod install` from the Project directory first.
 
 ## Requirements
+
+N/A
 
 ## Installation
 
@@ -16,11 +15,11 @@ it simply add the following line to your Podfile:
 
     pod "slideframework"
 
-## Author
+## Usage
 
-Brian Weinreich, be.weinreich@gmail.com
+Need to add in...
 
 ## License
 
-slideframework is available under the MIT license. See the LICENSE file for more info.
+SlideViewFramework is available under the MIT license. See the LICENSE file for more info.
 
