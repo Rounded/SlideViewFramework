@@ -256,6 +256,10 @@ static CGRect size;
                                                           completion:^(BOOL finished){
                                                               self.secondLayerViewController.view.userInteractionEnabled = YES;
                                                               self.isSecondViewHidden = NO;
+                                                              if ([self.delegate respondsToSelector:@selector(firstDidSlideToMain:)]) {
+                                                                  [self.delegate firstDidSlideToMain:self.firstLayerViewController];
+                                                              }
+                                                              self.firstLayerViewController.view.userInteractionEnabled = NO;
                                                           }];
                                          
                                      }];
@@ -275,6 +279,9 @@ static CGRect size;
                                      completion:^(BOOL finished){
                                          self.secondLayerViewController.view.userInteractionEnabled = YES;
                                          self.isSecondViewHidden = NO;
+                                         if ([self.delegate respondsToSelector:@selector(firstDidSlideToMain:)]) {
+                                             [self.delegate firstDidSlideToMain:self.firstLayerViewController];
+                                         }
                                      }];
                 }
             }else{
@@ -290,7 +297,7 @@ static CGRect size;
                                      self.secondLayerView.frame = CGRectMake(275, 0, 320, [self screenHeight]);
                                  }
                                  completion:^(BOOL finished) {
-//                                     self.firstLayerViewController.tableView.scrollEnabled = YES;
+                                     self.firstLayerViewController.view.userInteractionEnabled = YES;
                                      self.secondLayerViewController.view.userInteractionEnabled = YES;
 //                                     self.firstLayerViewController.tableView.userInteractionEnabled = YES;
                                      self.isSecondViewHidden = NO;
@@ -322,6 +329,10 @@ static CGRect size;
                                                           self.firstLayerView.frame = CGRectMake(275, 0, 320, [self screenHeight]);
                                                       }
                                                       completion:^(BOOL finished){
+                                                          if ([self.delegate respondsToSelector:@selector(firstDidSlideToMain:)]) {
+                                                              [self.delegate firstDidSlideToMain:self.firstLayerViewController];
+                                                          }
+                                                          self.firstLayerViewController.view.userInteractionEnabled = NO;
                                                           self.secondLayerViewController.view.userInteractionEnabled = YES;
                                                           self.isSecondViewHidden = NO;
                                                       }];
@@ -340,6 +351,10 @@ static CGRect size;
                                      self.firstLayerView.frame = CGRectMake(275, 0, 320, [self screenHeight]);
                                  }
                                  completion:^(BOOL finished){
+                                     if ([self.delegate respondsToSelector:@selector(firstDidSlideToMain:)]) {
+                                         [self.delegate firstDidSlideToMain:self.firstLayerViewController];
+                                     }
+                                     self.firstLayerViewController.view.userInteractionEnabled = NO;
                                      self.secondLayerViewController.view.userInteractionEnabled = YES;
                                      self.isSecondViewHidden = NO;
                                  }];
@@ -384,6 +399,7 @@ static CGRect size;
                                                                   
                                                               }
                                                               completion:^(BOOL finished){
+                                                                  self.firstLayerViewController.view.userInteractionEnabled = YES;
                                                                   self.secondLayerViewController.view.userInteractionEnabled = YES;
                                                                   self.secondLayerViewController.navigationItem.leftBarButtonItem.enabled = NO;
                                                                   self.isSecondViewHidden = NO;
@@ -402,6 +418,7 @@ static CGRect size;
                                              
                                          }
                                          completion:^(BOOL finished){
+                                             self.firstLayerViewController.view.userInteractionEnabled = YES;
                                              self.secondLayerViewController.view.userInteractionEnabled = YES;
                                              self.secondLayerViewController.navigationItem.leftBarButtonItem.enabled = NO;
                                              self.isSecondViewHidden = NO;
@@ -417,6 +434,7 @@ static CGRect size;
                                          self.secondLayerView.frame = CGRectMake(0, 0, 320, [self screenHeight]);
                                      }
                                      completion:^(BOOL finished) {
+                                         self.firstLayerViewController.view.userInteractionEnabled = YES;
                                          self.secondLayerViewController.view.userInteractionEnabled = YES;
                                          self.secondLayerViewController.navigationItem.leftBarButtonItem.enabled = YES;
                                          self.isSecondViewHidden = NO;
@@ -434,6 +452,7 @@ static CGRect size;
                                      self.secondLayerView.frame = CGRectMake(275, 0, 320, [self screenHeight]);
                                  }
                                  completion:^(BOOL finished) {
+                                     self.firstLayerViewController.view.userInteractionEnabled = YES;
                                      self.secondLayerViewController.view.userInteractionEnabled = YES;
                                      self.secondLayerViewController.navigationItem.leftBarButtonItem.enabled = NO;
                                      self.isSecondViewHidden = NO;
@@ -455,10 +474,12 @@ static CGRect size;
                          self.isSecondViewHidden = NO;
                      }
                      completion:^(BOOL finished) {
-                         
+                         self.firstLayerViewController.view.userInteractionEnabled = NO;
                      }
      ];
-    
+    if ([self.delegate respondsToSelector:@selector(firstDidSlideToMain:)]) {
+        [self.delegate firstDidSlideToMain:self.firstLayerViewController];
+    }
 }
 
 - (void)slideToMainView
@@ -471,6 +492,7 @@ static CGRect size;
                          }
                          completion:^(BOOL finished){
                              self.secondLayerViewController.view.userInteractionEnabled = YES;
+                             self.firstLayerViewController.view.userInteractionEnabled = NO;
                              self.isSecondViewHidden = NO;
                          }];
     }else {
@@ -481,10 +503,14 @@ static CGRect size;
                          }
                          completion:^(BOOL finished){
                              self.secondLayerViewController.view.userInteractionEnabled = YES;
+                             self.firstLayerViewController.view.userInteractionEnabled = YES;
                              self.isSecondViewHidden = NO;
                          }];
     }
-    [self.delegate firstDidSlideToMain:self.firstLayerViewController];
+    
+    if ([self.delegate respondsToSelector:@selector(firstDidSlideToMain:)]) {
+        [self.delegate firstDidSlideToMain:self.firstLayerViewController];
+    }
     
 }
 
@@ -526,6 +552,8 @@ static CGRect size;
                          }
                          completion:^(BOOL finished) {
                              self.secondLayerViewController.view.userInteractionEnabled = YES;
+                             self.firstLayerViewController.view.userInteractionEnabled = YES;
+
                              self.isSecondViewHidden = NO;
                          }
          ];
@@ -540,7 +568,9 @@ static CGRect size;
                          self.secondLayerView.frame = CGRectMake(0, 0, 320, [self screenHeight]);
                      }
                      completion:^(BOOL finished) {
-                         self.secondLayerView.userInteractionEnabled = YES;
+                         self.secondLayerViewController.view.userInteractionEnabled = YES;
+                         self.firstLayerViewController.view.userInteractionEnabled = YES;
+
                          self.isSecondViewHidden = NO;
                      }
      ];

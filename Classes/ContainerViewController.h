@@ -10,7 +10,7 @@
 
 @class ContainerViewController;
 
-@protocol ContainerViewDelegate
+@protocol ContainerViewDelegate<NSObject>
 
 -(void)firstDidSlideToMain:(UIViewController *)firstViewController;
 
