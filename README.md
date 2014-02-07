@@ -1,12 +1,25 @@
-ReadMe
----
+# SlideViewFramework
 
-The SlideViewFramework is a three panel slide controller that takes in three view controllers and uses a slide naviagation. 
+## Usage
 
-Add the static library to your project, and initialize the `ContainerViewController` as follows:
+To run the example project; clone the repo, and run `pod install` from the Project directory first.
 
-	ContainerViewController *containerVC = [[ContainerViewController alloc] initWithBaseViewController:baseVC andFirst:firstVC andSecond:secondVC];
-	
-and present the view controller. 
+## Requirements
 
-The dropshadows on the first and second view controllers can be adjusted by setting the `ContainerViewController` `shadowOpacity`, `shadowOffset` properties. The defaults for those values, if not set, are 0.5, and (-3.0, 0.5), respectively.
+N/A
+
+## Installation
+
+slideframework is available through [CocoaPods](http://cocoapods.org), to install
+it simply add the following line to your Podfile:
+
+    pod "slideframework"
+
+## Usage
+
+Need to add in...
+
+## License
+
+SlideViewFramework is available under the MIT license. See the LICENSE file for more info.
+
