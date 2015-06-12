@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F44C53B1-0F18-4030-98C2-BD30AD80CBBF</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SlideViewFramework</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D867E6EB437E21ED3BDF5FD041A2ED030250A093</key>
+		<string>https://github.com/Rounded/SlideViewFramework.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SlideViewFramework.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D867E6EB437E21ED3BDF5FD041A2ED030250A093</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Rounded/SlideViewFramework.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D867E6EB437E21ED3BDF5FD041A2ED030250A093</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D867E6EB437E21ED3BDF5FD041A2ED030250A093</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SlideViewFramework</string>
+		</dict>
+	</array>
+</dict>
+</plist>

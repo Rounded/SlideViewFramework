@@ -159,6 +159,11 @@ static CGRect size;
 
 - (void)setFirstLayerViewController:(UIViewController *)firstLayerViewController
 {
+    if (_firstLayerViewController != firstLayerViewController) {
+        [_firstLayerViewController.view removeFromSuperview];
+        [_firstLayerViewController removeFromParentViewController];
+    }
+    
     _firstLayerViewController = firstLayerViewController;
     
     // handle view controller hierarchy
@@ -169,9 +174,10 @@ static CGRect size;
         if ([self isViewLoaded]) {
             [self updateFirstLayerView];
         }
-    }else{
-        [[firstLayerView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     }
+//    }else{
+//        [[firstLayerView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+//    }
     
 }
 
